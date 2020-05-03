@@ -1,11 +1,11 @@
 module.exports = {
-	css: {
+  css: {
     sourceMap: true,
 
-		loaderOptions: {
-			scss: {
-				prependData: `@import "~@/styles/main.scss";`
-			},
-		}
+    loaderOptions: {
+      scss: {
+        prependData: `@import "~@/styles/main.scss";`
+      },
+    }
   }
 }

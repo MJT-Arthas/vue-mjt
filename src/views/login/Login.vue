@@ -94,7 +94,12 @@
   </div>
 </template>
 <script>
-import { stripScript, checkMail, checkPassword, checkCode } from "../../tools/validate.js";
+import {
+  stripScript,
+  checkMail,
+  checkPassword,
+  checkCode,
+} from "../../tools/validate.js";
 export default {
   name: "login",
   data() {
@@ -114,7 +119,6 @@ export default {
       this.ruleForm.password = stripScript(value);
       value = this.ruleForm.password;
 
-
       if (value === "") {
         callback(new Error("请输入密码"));
       } else if (checkPassword(value)) {
@@ -128,16 +132,15 @@ export default {
 
     var passwords = (rule, value, callback) => {
       //解决v-show的bug
-      if(this.model === "login"){ callback(); }
-      //过滤
-      this.ruleForm.passwords = stripScript(value);
-      value = this.ruleForm.passwords;
+      if (this.model === "login") {
+        callback();
+      }
+      this.ruleForm.password = stripScript(value);
+      value = this.ruleForm.password;
       if (value === "") {
         callback(new Error("请输入密码"));
       } else if (value !== this.ruleForm.password) {
-        return callback(
-          new Error("两次密码不相同")
-        );
+        return callback(new Error("两次密码不相同"));
       } else {
         callback();
       }
@@ -165,23 +168,25 @@ export default {
         mail: "",
         password: "",
         // passwords: "",
-        checkcode: ""
+        checkcode: "",
       },
       rules: {
         mail: [{ validator: mail, trigger: "blur" }],
         password: [{ validator: password, trigger: "blur" }],
         passwords: [{ validator: passwords, trigger: "blur" }],
-        checkcode: [{ validator: checkcode, trigger: "blur" }]
-      }
+        checkcode: [{ validator: checkcode, trigger: "blur" }],
+      },
     };
   },
   created() {},
   mounted() {},
   methods: {
     submitForm(formName) {
-      this.$refs[formName].validate(valid => {
+      this.$refs[formName].validate((valid) => {
         if (valid) {
-          alert("submit!");
+          // alert("submit!");
+          this.$router.push("/Carousel");
+          // this.$router.push('/demo')
         } else {
           console.log("error submit!!");
           return false;
@@ -190,21 +195,22 @@ export default {
     },
 
     toggleMenu(data) {
-      this.menuTab.forEach(element => {
+      this.menuTab.forEach((element) => {
         element.current = false;
       });
       data.current = true;
       this.model = data.type;
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
+@import "../../styles/main.scss";
 #login {
   margin: 0;
   padding: 0;
   background-color: #344a5f;
-  height: 100vh;
+  height: 3000px;
 }
 .loginWrap {
   width: 330px;

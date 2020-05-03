@@ -6,13 +6,19 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    redirect:"login"
+    redirect: "Login"
   },
   {
-    path: "/login",
+    path: "/Login",
     name: "Login",
     component: () => import("../views/login/Login")
   },
+  {
+    path: "/Carousel",
+    name: "Carousel",
+    component: () => import("../components/Carousel")
+  },
+
 ];
 
 const router = new VueRouter({
