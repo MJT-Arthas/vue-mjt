@@ -1,11 +1,22 @@
+// var path = require('path')
 module.exports = {
-  css: {
-    sourceMap: true,
+  // proxyTable: {
+  //   '/api': {
+  //     // target:'http://jsonplaceholder.typicode.com',
+  //     target: 'http://localhost:8080',
+  //     changeOrigin: true,
 
-    loaderOptions: {
-      scss: {
-        prependData: `@import "~@/styles/main.scss";`
-      },
+  //     pathRewrite: {
+  //       '/api': ''
+  //     }
+  //   },
+    css: {
+      sourceMap: true,
+
+      loaderOptions: {
+        scss: {
+          prependData: `@import "~@/styles/main.scss";`
+        },
+      }
     }
   }
-}

@@ -6,7 +6,12 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    redirect: "Login"
+    redirect: "Mock"
+  },
+  {
+    path: "/Mock",
+    name: "Mock",
+    component: () => import("../views/login/Mock")
   },
   {
     path: "/Login",

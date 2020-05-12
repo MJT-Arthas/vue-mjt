@@ -8,6 +8,7 @@
     <!-- <router-link to="/"></router-link>
     <router-view></router-view> -->
     <!-- <router-link to="/Carousel"></router-link> -->
+    <Mock></Mock>
     <Login></Login>
     <Carousel></Carousel>
   </div>
@@ -16,27 +17,36 @@
 <script>
 import Carousel from "./components/Carousel.vue";
 import Login from "./views/login/Login.vue";
+import Mock from "./views/login/Mock.vue";
 
 export default {
   name: "app",
   data() {
-    return {};
+    return {
+    
+    };
   },
-
+  mounted() {
+  },
   methods: {
-    // 参数就是子组件传递出来的数据
+    fasong(){
+      this.$http.get('/msg1').then(function (res) {
+        console.log(res)
+      })
+    }
   },
 
   // 引入子组件
   components: {
     Carousel,
     Login,
+    Mock
   },
 };
 </script>
 <style lang="scss" scoped>
 #app {
-  background-color: red;
+  background-color: #344a5f;
   #backtop {
     height: 100%;
     width: 100%;
@@ -46,7 +56,7 @@ export default {
     line-height: 40px;
     color: #1989fa;
   }
-  #backtop:hover{
+  #backtop:hover {
     color: white;
     background-color: gray;
   }

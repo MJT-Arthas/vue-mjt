@@ -210,7 +210,7 @@ export default {
   margin: 0;
   padding: 0;
   background-color: #344a5f;
-  height: 3000px;
+  height: 100vh;
 }
 .loginWrap {
   width: 330px;
