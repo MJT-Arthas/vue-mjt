@@ -3,7 +3,7 @@
     <div class="swiper">
       <!--图片区域-->
       <ul class="imgBox transi" :style="theStyle">
-        <li v-for="(item) in imgArr" :key="item.id">
+        <li v-for="item in imgArr" :key="item.id">
           <img v-bind:src="item.text" alt="" />
         </li>
       </ul>
@@ -24,12 +24,12 @@
   </div>
 </template>
 <style lang="scss" scoped>
-#Carousel{
+#Carousel {
   // height: 2000px;
   background-color: #344a5f;
   position: relative;
   // top: -50px;
-  }
+}
 .swiper {
   width: 1226px;
   height: 460px;
@@ -122,7 +122,7 @@ export default {
         { text: "/img/轮播图3.jpg" },
         { text: "/img/轮播图4.jpg" },
         { text: "/img/轮播图5.jpg" },
-        { text: "/img/轮播图1.jpg" }, //注意此处要放第一张图
+        { text: "/img/轮播图1.jpg" } //注意此处要放第一张图
       ],
       imgW: 1226,
       index: -1,
@@ -130,15 +130,15 @@ export default {
       theStyle: {
         transform: "",
         backgroundColor: "red",
-        transition: "500ms",
+        transition: "500ms"
       },
       itemStyle: {
-        backgroundColor: "",
+        backgroundColor: ""
       },
       nextButtonStyle: {
-        left: "1196px",
+        left: "1196px"
       },
-      itemList: [],
+      itemList: []
     };
   },
   mounted() {},
@@ -149,7 +149,7 @@ export default {
       //根据图片数量生成分页器列表
       this.itemList.push({
         num: `${i + 1}`,
-        style: { backgroundColor: "" },
+        style: { backgroundColor: "" }
       });
     }
     this.itemList[0].style.backgroundColor = "red"; //默认第一张选中
@@ -252,7 +252,7 @@ export default {
         }
         this.flag = !true;
       }
-    },
-  },
+    }
+  }
 };
 </script>

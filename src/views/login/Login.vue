@@ -98,7 +98,7 @@ import {
   stripScript,
   checkMail,
   checkPassword,
-  checkCode,
+  checkCode
 } from "../../tools/validate.js";
 export default {
   name: "login",
@@ -158,7 +158,7 @@ export default {
     return {
       menuTab: [
         { txt: "登录", current: true, type: "login" },
-        { txt: "注册", current: false, type: "register" },
+        { txt: "注册", current: false, type: "register" }
       ],
 
       //切换
@@ -168,21 +168,21 @@ export default {
         mail: "",
         password: "",
         // passwords: "",
-        checkcode: "",
+        checkcode: ""
       },
       rules: {
         mail: [{ validator: mail, trigger: "blur" }],
         password: [{ validator: password, trigger: "blur" }],
         passwords: [{ validator: passwords, trigger: "blur" }],
-        checkcode: [{ validator: checkcode, trigger: "blur" }],
-      },
+        checkcode: [{ validator: checkcode, trigger: "blur" }]
+      }
     };
   },
   created() {},
   mounted() {},
   methods: {
     submitForm(formName) {
-      this.$refs[formName].validate((valid) => {
+      this.$refs[formName].validate(valid => {
         if (valid) {
           // alert("submit!");
           this.$router.push("/Carousel");
@@ -195,13 +195,13 @@ export default {
     },
 
     toggleMenu(data) {
-      this.menuTab.forEach((element) => {
+      this.menuTab.forEach(element => {
         element.current = false;
       });
       data.current = true;
       this.model = data.type;
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

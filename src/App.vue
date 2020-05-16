@@ -8,6 +8,8 @@
     <!-- <router-link to="/"></router-link>
     <router-view></router-view> -->
     <!-- <router-link to="/Carousel"></router-link> -->
+    <Addition></Addition>
+    <Subtraction></Subtraction>
     <Mock></Mock>
     <Login></Login>
     <Carousel></Carousel>
@@ -18,30 +20,24 @@
 import Carousel from "./components/Carousel.vue";
 import Login from "./views/login/Login.vue";
 import Mock from "./views/login/Mock.vue";
-
+import Addition from "./components/Addition";
+import Subtraction from "./components/Subtraction";
 export default {
   name: "app",
   data() {
-    return {
-    
-    };
+    return {};
   },
-  mounted() {
-  },
-  methods: {
-    fasong(){
-      this.$http.get('/msg1').then(function (res) {
-        console.log(res)
-      })
-    }
-  },
+  mounted() {},
+  methods: {},
 
   // 引入子组件
   components: {
     Carousel,
     Login,
+    Subtraction,
+    Addition,
     Mock
-  },
+  }
 };
 </script>
 <style lang="scss" scoped>

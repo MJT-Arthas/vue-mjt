@@ -22,8 +22,7 @@ const routes = [
     path: "/Carousel",
     name: "Carousel",
     component: () => import("../components/Carousel")
-  },
-
+  }
 ];
 
 const router = new VueRouter({
